@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Agharti";
+  src: url("/AghartiVF.2a0d0afd.ttf");
+}
+
+:root {
+  --wdth: 100;
+  --wght: 10;
+}
+
+body {
+  font-family: "Agharti";
+  font-variation-settings: "wdth" var(--wdth), "wght" var(--wght);
+  background-color: #ff5200;
+}
+
+#app {
+  text-align: center;
+  height: 94vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 250px;
+  letter-spacing: 10px;
+}
+
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 75px;
+}
+
+.option1 {
+  background-color: #ff004f;
+  color: #000000;
+}
+
+.option2 {
+  background-color: #ff5200;
+  color: #000000;
+}
+
+/*# sourceMappingURL=/src.a2b27638.css.map */

@@ -1,0 +1,2 @@
+@font-face{font-family:Octane;src:url(/OctaneGX.70d9a3dd.ttf)}:root{--wdth:100;--wght:10}body{font-family:Octane;font-variation-settings:"wdth" var(--wdth),"wght" var(--wght)}#app{text-align:center;height:100vh;width:100%;display:flex;align-items:center;justify-content:center;font-size:2rem}
+/*# sourceMappingURL=/src.1d7cbfa5.css.map */
