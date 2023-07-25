@@ -12,26 +12,26 @@
       <h1></h1>
     </div>
     <div class="footer">
-      <div>
-        <label for="sense">Sense</label>
-        <input type="range" id="sense" name="sense" min="0" max="11">
-      </div>
-      <div>
-        <form id="form">
+      <form id="form">
+        <div>
+          <label for="sense">Sense</label>
+          <input type="range" id="sense" name="sense" min="-100" max="-31" value="-100">
+        </div>
+        <div>
           <label for="word">Word</label>
           <input type="text" id="word" name="word">
-          <button type="submit">trocar</button>
-        </form>
-      </div>
-      <div>
-        <label for="colors">Colors</label>
-        <input type="radio" id="option1" name="colors" value="1" checked>
-        <label for="option1">1</label>
-        <input type="radio" id="option2" name="colors" value="2">
-        <label for="option2">2</label>
-        <input type="radio" id="option3" name="colors" value="3">
-        <label for="option3">3</label>
-      </div>
+        </div>
+        <div>
+          <label for="colors">Colors</label>
+          <input type="radio" id="option1" name="colors" value="#ff5200" checked>
+          <label for="option1">1</label>
+          <input type="radio" id="option2" name="colors" value="#5700ff">
+          <label for="option2">2</label>
+          <input type="radio" id="option3" name="colors" value="#ff004f">
+          <label for="option3">3</label>
+        </div>
+        <button type="submit">trocar</button>
+      </form>
     </div>
   </div>
   <script src="src/index.js"></script>

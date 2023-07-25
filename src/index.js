@@ -4,6 +4,9 @@ const el = document.querySelector("#app h1");
 var sourceStr = "amplificar";
 var strArray = sourceStr.split("");
 
+var minDecibels = -100;
+var maxDecibels = -10;
+
 var bins = 16;
 
 function initElements(stringArray) {
@@ -26,15 +29,31 @@ const form = document.getElementById("form");
 form.addEventListener("submit", function submit(event) {
   event.preventDefault();
 
-  const elem = document.querySelectorAll('#app h1 span');
-  elem.forEach(item => item.remove());
+  //update sense
+  if (event.target[0].value !== minDecibels) {
+    minDecibels = event.target[0].value;
+    initVisualizer();
+  }
 
-  sourceStr = event.target[0].value;
-  strArray = sourceStr.split("");
-  initElements(strArray);
+  //update text
+  if (event.target[1].value) {
+    const elem = document.querySelectorAll('#app h1 span');
+    elem.forEach(item => item.remove());
+    sourceStr = event.target[1].value;
+    strArray = sourceStr.split("");
+    initElements(strArray);
+  }
+
+  //update bgcolor
+  for (let i = 2; i < 5; i++) {
+    if (event.target[i].checked) {
+      var body = document.querySelector('body');
+      if (body) body.style.backgroundColor = event.target[i].value;
+    }
+  }
 });
 
-function initVisualizer(args) {
+function initVisualizer() {
   // Older browsers might not implement mediaDevices at all, so we set an empty object first
   if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
@@ -72,8 +91,8 @@ function initVisualizer(args) {
       var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
       var analyser = audioCtx.createAnalyser();
-      analyser.minDecibels = args;
-      analyser.maxDecibels = -10;
+      analyser.minDecibels = minDecibels;
+      analyser.maxDecibels = maxDecibels;
       analyser.smoothingTimeConstant = 0.5;
 
       var source = audioCtx.createMediaStreamSource(stream);
